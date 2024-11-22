@@ -1,1 +1,17 @@
-ыва
+Кнопки:
+//div[text()='Sauce Labs Bolt T-Shirt']/ancestor::div[@class='inventory_item']//button[text()='Add to cart']  - кнопка для добавления товара 'Sauce Labs Bolt T-Shirt' в корзину
+
+//button[@name="add-to-cart-sauce-labs-onesie" and text()='Add to cart']  - кнопка для добавления товара 'Sauce Labs Onesie' в корзину
+
+//button[text()='Open Menu']     .bm-burger-button>button   - Бургер
+
+//div[@class="right_component"]/span/select или //select     .product_sort_container - выпадающий список
+
+.social_facebook>a 
+
+Иконки в футере:
+//li[@class='social_twitter']      .social_twitter  
+
+//li[@class='social_facebook']      .social_facebook
+
+//li[@class='social_linkedin']   	.social_linkedin
