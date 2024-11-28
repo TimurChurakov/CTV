@@ -12,7 +12,6 @@ public class ProductPage extends BasePage {
     private final By TITLE = By.xpath("//span[text()='Products']");
     private final By TITLE2 = By.xpath("//span[text()='Products']");
     private final String ADD_TO_CART_PATTERN = "//div[text()='%s']//ancestor::div[@class='inventory_item']//button";
-    private final By CART_COUNTER = By.cssSelector("span.shopping_cart_badge");
     private final By OPEN_CART = By.cssSelector(".shopping_cart_link");
 
     public String getSpan() {

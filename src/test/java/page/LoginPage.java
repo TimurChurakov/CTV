@@ -9,8 +9,6 @@ public class LoginPage extends BasePage {
     private final By PASSWORD_INPUT = By.id("password");
     private final By LOGIN_BUTTON = By.id("login-button");
     private final By MESSAGE_ERROR = By.cssSelector("[data-test='error']");
-    private final By MESSAGE_ERROR2 = By.cssSelector("h3[data-test='error']");
-    private final By MESSAGE_ERROR3 = By.cssSelector("h3[data-test='error']");
 
     public LoginPage(WebDriver browser) {
         super(browser);
@@ -28,13 +26,5 @@ public class LoginPage extends BasePage {
 
     public String getMessageError() {
         return browser.findElement(MESSAGE_ERROR).getText();
-    }
-
-    public String getMessageError2() {
-        return browser.findElement(MESSAGE_ERROR2).getText();
-    }
-
-    public String getMessageError3() {
-        return browser.findElement(MESSAGE_ERROR3).getText();
     }
 }
