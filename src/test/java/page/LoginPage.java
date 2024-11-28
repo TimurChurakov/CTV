@@ -8,12 +8,11 @@ public class LoginPage extends BasePage {
     private final By USERNAME_INPUT = By.id("user-name");
     private final By PASSWORD_INPUT = By.id("password");
     private final By LOGIN_BUTTON = By.id("login-button");
-    private final By DATA = By.cssSelector("[data-test='error']");
-    private final By DATA2 = By.cssSelector("h3[data-test='error']");
-    private final By DATA3 = By.cssSelector("h3[data-test='error']");
+    private final By MESSAGE_ERROR = By.cssSelector("[data-test='error']");
+    private final By MESSAGE_ERROR2 = By.cssSelector("h3[data-test='error']");
+    private final By MESSAGE_ERROR3 = By.cssSelector("h3[data-test='error']");
 
     public LoginPage(WebDriver browser) {
-        //this.browser = browser;
         super(browser);
     }
 
@@ -27,15 +26,15 @@ public class LoginPage extends BasePage {
         browser.findElement(LOGIN_BUTTON).click();
     }
 
-    public String getData() {
-        return browser.findElement(DATA).getText();
+    public String getMessageError() {
+        return browser.findElement(MESSAGE_ERROR).getText();
     }
 
-    public String getData2() {
-        return browser.findElement(DATA2).getText();
+    public String getMessageError2() {
+        return browser.findElement(MESSAGE_ERROR2).getText();
     }
 
-    public String getData3() {
-        return browser.findElement(DATA3).getText();
+    public String getMessageError3() {
+        return browser.findElement(MESSAGE_ERROR3).getText();
     }
 }
