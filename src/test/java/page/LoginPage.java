@@ -1,5 +1,6 @@
 package page;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,16 +15,21 @@ public class LoginPage extends BasePage {
         super(browser);
     }
 
-    public void open() {
+    @Step("Открытие браузера")
+    public LoginPage open() {
         browser.get(BASE_URL);
+        return this;
     }
 
-    public void login(String user, String password) {
+    @Step("Ввод данных {user} и {password}")
+    public LoginPage login(String user, String password) {
         browser.findElement(USERNAME_INPUT).sendKeys(user);
         browser.findElement(PASSWORD_INPUT).sendKeys(password);
         browser.findElement(LOGIN_BUTTON).click();
+        return this;
     }
 
+    @Step("Получаем текс из сообщения об ошибке")
     public String getMessageError() {
         return browser.findElement(MESSAGE_ERROR).getText();
     }
