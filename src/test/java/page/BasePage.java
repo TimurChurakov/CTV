@@ -13,6 +13,6 @@ public abstract class BasePage {
 
     public BasePage(WebDriver browser) {
         this.browser = browser;
-        wait = new WebDriverWait(browser, Duration.ofSeconds(4));
+        wait = new WebDriverWait(browser, Duration.ofSeconds(6));
     }
 }

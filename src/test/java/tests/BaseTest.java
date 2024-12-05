@@ -7,9 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
-import page.CartPage;
-import page.LoginPage;
-import page.ProductPage;
+import page.*;
 import utils.PropertyReader;
 
 import java.util.concurrent.TimeUnit;
@@ -20,6 +18,8 @@ public class BaseTest {
     LoginPage loginPage;
     ProductPage productPage;
     CartPage cartPage;
+    CheckoutPage checkoutPage;
+    CheckoutOverviewPage checkoutOverviewPage;
     String user;
     String password;
 
@@ -32,16 +32,16 @@ public class BaseTest {
             options.addArguments("start-maximized");
             browser = new ChromeDriver(options);
         } else if (browserr.equalsIgnoreCase("edge")) {
-
             browser = new EdgeDriver();
-
         }
 
-        browser.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        browser.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         context.setAttribute("browser", browser);
         loginPage = new LoginPage(browser);
         productPage = new ProductPage(browser);
         cartPage = new CartPage(browser);
+        checkoutPage = new CheckoutPage(browser);
+        checkoutOverviewPage = new CheckoutOverviewPage(browser);
 
         System.setProperty("BASE_URL", PropertyReader.getProperty("CTV.url"));
         user = PropertyReader.getProperty("CTV.user");
