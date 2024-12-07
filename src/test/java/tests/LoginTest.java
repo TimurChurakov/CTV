@@ -3,8 +3,6 @@ package tests;
 import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utils.PropertyReader;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 

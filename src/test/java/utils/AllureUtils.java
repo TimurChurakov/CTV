@@ -11,4 +11,3 @@ import org.openqa.selenium.WebDriver;
         return ((TakesScreenshot) browser).getScreenshotAs(OutputType.BYTES);
     }
 }*/
-

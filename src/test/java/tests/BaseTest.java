@@ -9,7 +9,6 @@ import org.testng.ITestContext;
 import org.testng.annotations.*;
 import page.*;
 import utils.PropertyReader;
-
 import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
