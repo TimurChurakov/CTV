@@ -15,23 +15,23 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    private final By FIRST_NAME = By.cssSelector("input[placeholder='First Name']");
-    private final By LAST_NAME = By.cssSelector("input[placeholder='Last Name']");
+    private final By firstName = By.cssSelector("input[placeholder='First Name']");
+    private final By lastName = By.cssSelector("input[placeholder='Last Name']");
     private final By Zip_Postal_Code = By.cssSelector("input[placeholder='Zip/Postal Code']");
-    private final By BUTTON_CONTINUE_CHECKOUT_PAGE = By.cssSelector("input[value='Continue']");
-    private final By MESSAGE_ERROR_CHECKOUT_PAGE = By.cssSelector("h3[data-test='error']");
+    private final By buttonContinueCheckoutPage = By.cssSelector("input[value='Continue']");
+    private final By messageErrorCheckoutPage = By.cssSelector("h3[data-test='error']");
 
     @Step("Ввод данных {firstname}, {lastname} и {zipcode}")
     public CheckoutPage form(String firstname, String lastname, String zipcode) {
-        browser.findElement(FIRST_NAME).sendKeys(firstname);
-        browser.findElement(LAST_NAME).sendKeys(lastname);
+        browser.findElement(firstName).sendKeys(firstname);
+        browser.findElement(lastName).sendKeys(lastname);
         browser.findElement(Zip_Postal_Code).sendKeys(zipcode);
-        browser.findElement(BUTTON_CONTINUE_CHECKOUT_PAGE).click();
+        browser.findElement(buttonContinueCheckoutPage).click();
         return this;
     }
 
     @Step("Получение текста из сообщения об ошибке")
     public String getMessageErrorCheckoutPage() {
-        return browser.findElement(MESSAGE_ERROR_CHECKOUT_PAGE).getText();
+        return browser.findElement(messageErrorCheckoutPage).getText();
     }
 }

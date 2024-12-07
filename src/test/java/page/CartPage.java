@@ -14,16 +14,15 @@ public class CartPage extends BasePage {
         super(browser);
     }
 
-    private final String REMOVE_CART_BUTTON_PATTERN = "//div[text()='%s']//ancestor::div[@class='cart_item']//button";
-    private final By BACK_IN_PRODUCTS = By.xpath("//button[text()='Continue Shopping']");
-    private final By ITEM_NAME = By.cssSelector(".inventory_item_name");
-    private final By ITEM_CART = By.cssSelector(".cart-item");
-    private final By BUTTON_CHECKOUT = By.xpath("//button[text()='Checkout']");
-    private final By TITLE_CHECKOUT = By.xpath("//span[text()='Checkout: Your Information']");
+    private static final String REMOVE_CART_BUTTON_PATTERN = "//div[text()='%s']//ancestor::div[@class='cart_item']//button";
+    private final By backInProducts = By.xpath("//button[text()='Continue Shopping']");
+    private final By itemName = By.cssSelector(".inventory_item_name");
+    private final By buttonCheckout = By.xpath("//button[text()='Checkout']");
+    private final By titleCheckout = By.xpath("//span[text()='Checkout: Your Information']");
 
     @Step("Проверка наличия товара в корзине")
     public ArrayList<String> getProductsName() {
-        List<WebElement> allProductsNames = browser.findElements(ITEM_NAME);
+        List<WebElement> allProductsNames = browser.findElements(itemName);
         ArrayList<String> names = new ArrayList<>();
         for (WebElement product : allProductsNames) {
             names.add(product.getText());
@@ -39,20 +38,20 @@ public class CartPage extends BasePage {
     }
 
     public int getProductsCount() {
-        return browser.findElements(ITEM_NAME).size();
+        return browser.findElements(itemName).size();
     }
 
     public void backInProducts() {
-        browser.findElement(BACK_IN_PRODUCTS).click();
+        browser.findElement(backInProducts).click();
     }
 
     public CartPage pressButtonCheckout() {
-        browser.findElement(BUTTON_CHECKOUT).click();
+        browser.findElement(buttonCheckout).click();
         return this;
     }
 
     public boolean titleCheckoutDisplayed() {
-        browser.findElement(TITLE_CHECKOUT).isDisplayed();
+        browser.findElement(titleCheckout).isDisplayed();
         return true;
     }
 }

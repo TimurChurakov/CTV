@@ -15,7 +15,7 @@ public class CheckoutTest extends BaseTest {
         checkoutPage
                 .openCheckoutPage()
                 .form("Pit", "Piterson", "1234567");
-        assertEquals(checkoutOverviewPage.getTitleOverview(), "Checkout: Overview", "");
+        assertEquals(checkoutOverviewPage.getTitleOverview(), "Checkout: Overview");
     }
 
     @DataProvider()

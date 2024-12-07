@@ -8,9 +8,9 @@ public class CheckoutOverviewPage extends BasePage {
         super(browser);
     }
 
-    private final By TITLE_CHECKOUT_OVERVIEW_PAGE = By.xpath("//span[text()='Checkout: Overview']");
+    private final By titleCheckoutOverviewPage = By.xpath("//span[text()='Checkout: Overview']");
 
     public String getTitleOverview() {
-        return browser.findElement(TITLE_CHECKOUT_OVERVIEW_PAGE).getText();
+        return browser.findElement(titleCheckoutOverviewPage).getText();
     }
 }
