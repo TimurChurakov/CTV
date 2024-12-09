@@ -21,7 +21,7 @@ public class CheckoutPage extends BasePage {
     private final By messageErrorCheckoutPage = By.cssSelector("h3[data-test='error']");
 
     @Step("Ввод данных {firstname}, {lastname} и {zipcode}")
-    public CheckoutPage form(String firstname, String lastname, String zipcode) {
+    public CheckoutPage checkoutInfoForm(String firstname, String lastname, String zipcode) {
         browser.findElement(firstName).sendKeys(firstname);
         browser.findElement(lastName).sendKeys(lastname);
         browser.findElement(Zip_Postal_Code).sendKeys(zipcode);
